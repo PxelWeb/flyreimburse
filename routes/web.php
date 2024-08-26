@@ -21,17 +21,6 @@ use function Pest\Laravel\get;
 //CreateApplication2
 // Route::get('application',[UserApplicationController::class,'create'])->name('create');
 Route::domain('app.flyreimburse.com')->group(function () {
-Route::get('/test-email', function () {
-    try {
-        Mail::raw('Test email from Laravel!', function ($message) {
-            $message->to('meerhamzahanif@gmail.com')
-                    ->subject('Test Email');
-        });
-        return 'Email sent successfully!';
-    } catch (\Exception $e) {
-        return 'Error sending email: ' . $e->getMessage();
-    }
-});
 
 
     Route::get('/', [UserApplicationController::class, 'form1'])->name('form1');
