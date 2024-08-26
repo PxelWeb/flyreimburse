@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+			 <!-----<h1 class="heading">
+				
+				Compensation calculator	-->		
+			</h1>
+		    <!-----forma fillon ketu-->
+					<form name="form1">
+			
+                    
+					<div class="question"><h2><strong>Has your flight been delayed or cancelled?</strong></h2></div>
+					<div class="question"><h2>You may be entitled to up to €600 of compensation in case your flight has been delayed, cancelled or if you have been denied boarding in the last 6 years</h2></div>
+					<div class="question"><h2>What happened?</h3></div>
+						<!-----fluturimet e anulluara-->
+						<div class="reason">
+						<button required class="radio-item" id="radio-delay">Flight delayed</button>
+						<button class="radio-item" id="radio-cancellation" required checked>Flight cancelled</button>
+						<button class="radio-item" id="radio-missed_connection" required checked>Missed connection</button>
+						<button class="radio-item" id="radio-denied" required checked>Denied boarding</button>
+						</div>
+                        <!-----nisja dhe destinacioni-->
+						<div class="pamjapare">
+						<div class="aeroporti">
+							<div class="avioni"><img src="img/icons8-plane-48.png" alt="Airport search" title="Airport search"></div>
+							<input type="text" required name="departure" class="departure" autocomplete="off" placeholder="From (e.g. London or LHR)">
+							<div class="dropdown_departure" id="departure-dropdown">
+								<div class="dropdown">Start typing...</div>
+							</div>
+						</div>
+						<div class="aeroporti">
+							<div class="avioni"><img src="img/icons8-airplane-48.png" alt="Airport search" title="Airport search"></div>
+							<input type="text" required name="arrival" class="arrival" autocomplete="off" placeholder="To (e.g. Paris or CDG)">
+							<div class="dropdown-arrival" id="arrival-dropdown">
+								<div class="dropdown">Start typing...</div>
+							</div>
+						</div>
+						</div>
+						<div class="missed">
+						<p>You can only apply for compensation if both flights were in one booking</p>
+						<h3>Delayed or cancelled flight</h3>
+						<div class="aeroporti">
+							<div class="avioni"><img src="img/icons8-plane-48.png" alt="Airport search" title="Airport search"></div>
+							<input type="text" required name="departure" class="departure" autocomplete="off" placeholder="From (e.g. London or LHR)">
+							<div class="dropdown_departure" id="departure-dropdown">
+								<div class="dropdown">Start typing...</div>
+							</div>
+						</div>
+						<div class="aeroporti">
+							<div class="avioni"><img src="img/icons8-airplane-48.png" alt="Airport search" title="Airport search"></div>
+							<input type="text" required name="arrival" class="arrival" autocomplete="off" placeholder="To (e.g. Paris or CDG)">
+							<div class="dropdown-arrival" id="arrival-dropdown">
+								<div class="dropdown">Start typing...</div>
+							</div>
+						</div>
+							<h3>Missed flight</h3>
+						<div class="aeroporti">
+							<div class="avioni"><img src="img/icons8-plane-48.png" alt="Airport search" title="Airport search"></div>
+							<input type="text" required name="departure" class="departure" autocomplete="off" placeholder="Connection">
+							<div class="dropdown_departure" id="departure-dropdown">
+								<div class="dropdown">Start typing...</div>
+							</div>
+						</div>
+						<div class="aeroporti">
+							<div class="avioni"><img src="img/icons8-airplane-48.png" alt="Airport search" title="Airport search"></div>
+							<input type="text" required name="arrival" class="arrival" autocomplete="off" placeholder="To (e.g. Riga or RIX)">
+							<div class="dropdown-arrival" id="arrival-dropdown">
+								<div class="dropdown">Start typing...</div>
+							</div>
+						</div>
+					</div>
+	
+						<!-----data dhe linja ajrore-->
+						
+				<div class="date-air">
+					<div class="col-2">
+					<div class="dates">Date of departure</div>
+					<div class="aeroporti">
+					<div class="calendar"><img src="img/calendar.png" alt="Airport search" title="Airport search"></div>
+					<input type="date" required name="date" class="date" placeholder="Date" min="2009-01-01"></div></div>
+					<div class="col-2">
+						<div class="air">Airline</div>
+						<input type="text" required name="airline" class="airlines" autocomplete="off" placeholder="Airline">
+							<div class="dropdown">Start typing...</div>
+					</div>
+				</div>
+					<div class="tranziti">
+					<p>How much time did you have for connection?</p>
+					<div class="butonat">
+						<button class="vone" name="vone" id="vone1">Less than 1 hour</button>	
+							<button class="vone" name="vone" id="vone2">More then 1 hour</button>
+								<button class="vone" name="vone" id="vone3">Flights already departed </button>
+						</div>
+					</div>
+					
+				<!-----zgjedhjet qe kemi per vonesa ne ore-->
+				<div class="vonesaore" >
+					<div class="pyetja">How long was the delay of your arrival to the final destination?</div>
+					<div class="butonat">
+					<button class="vone" name="vone" id="vone1">Less than 3 hours</button>
+						<button class="vone" name="vone" id="vone2">Between 3 and 4 hours</button>
+							<button class="vone" name="vone" id="vone3">Between 4 and 5 hours</button>
+								<button class="vone" name="vone" id="vone4">More than 5 hours</button>
+					</div>
+				</div>
+					<!-----vonesat me disa dite per fluturime te anulluara-->
+				<div class="vonesadite" >
+					<div class="pyetja">How many days before the departure did the airline inform you about the cancellation?...</div>
+					<div class="butonat">
+						<button class="vone" name="vone" id="vone1">Less than 7 days</button>	
+							<button class="vone" name="vone" id="vone2">Less then 14 days</button>
+								<button class="vone" name="vone" id="vone3">More than 14 days</button>
+					</div>
+				</div>
+					<div class="denied-alternative">
+					<div class="pyetja">Were you offered an alternative flight?</div>
+					<div class="butonat">
+						<button class="vone" name="yes" id="yes">YES</button>	
+							<button class="vone" name="no" id="no">NO</button>
+					</div>
+					</div>
+						<div class="vonesaore" >
+							<div class="pyetja">How long was the delay of your arrival to the final destination?</div>
+							<div class="butonat">
+							<button class="vone" name="vone" id="vone1">Less than 3 hours</button>	
+								<button class="vone" name="vone" id="vone2">Between 3 and 4 hours</button>
+									<button class="vone" name="vone" id="vone3">Between 4 and 5 hours</button>
+										<button class="vone" name="vone" id="vone4">More than 5 hours</button>
+							</div>
+						</div>	<br>
+						<!-----butoni submit-->
+					<div class="submit-button">
+						<a href="forma2.html" class="action-button" id="first-button">
+							<span class="button-text">Submit application</span>
+						</a>
+					</div>
+				<!-----paragrafi fundit pershkrues-->
+		<div class="info-text">in accordance with the legislation of the EU and Turkey</div>
+						
+					</form>			
+<script src="file.js">
+</script>
+</body>
+</html>

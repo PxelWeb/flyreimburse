@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+  
+		<!-----forma fillon ketu-->
+        <form name="form2">
+            <div class="question-4"><p>Airlines require this data to process your claim. In exceptional conditions, the airline will mail you a cheque</p></div>
+					<form action="index.php" method="post" id="formin">
+                        <div class="adultminor" id="adultminor">
+                            <p class="companion">Companion</p>
+                            <div class="selekt">
+                                <button id="btnadult" name="adult">ADULT</button>
+                                <button id="btnminor" name="minor">MINOR (under 18)</button>
+                            </div>
+                    <div class="fushatf4">
+                        <p class="companion-2">Full name, as in the passport</p>
+                        <div class="usrname">
+                        <img src="img/icons8-name-50 (1).png">
+                        <input type="text" name="username" placeholder="Full name, as in tha passport" required>
+                        </div>
+                        <p class="companion-2">E-mail (optional)</p>
+                        <div class="mail">
+                        <img src="img/icons8-email-50.png">
+                        <input type="email" name="email" placeholder="E-mail (optional)"required>  
+                        </div>
+                        <p class="companion-3">Date of birth</p>
+                       
+                    <div class="calendari">
+					<img src="img/icons8-calendar-24.png">
+					<input type="date" name="date" class="date" placeholder="Date" min="2009-01-01"></div>
+                    </div>
+                    </div>
+                        </div>
+                        
+                            <div class="adultminor" id="adultminor1">
+                                <p class="companion">Companion</p>
+                                <div class="selekt">
+                                    <button id="btnadult" name="adult">ADULT</button>
+                                    <button id="btnminor" name="minor">MINOR (under 18)</button>
+                                </div>
+                        <div class="fushatf4">
+                            <p class="companion-2">Full name, as in the passport</p>
+                            <div class="usrname">
+                            <img src="img/icons8-name-50 (1).png">
+                            <input type="text" name="username" placeholder="Full name, as in tha passport" required>
+                            </div>
+                            <p class="companion-2">E-mail (optional)</p>
+                            <div class="mail">
+                            <img src="img/icons8-email-50.png">
+                            <input type="email" name="email" placeholder="E-mail (optional)"required>  
+                            </div>
+                            <p class="companion-3">Date of birth</p>
+                           
+                        <div class="calendari">
+                        <img src="img/icons8-calendar-24.png">
+                        <input type="date" name="date" class="date" placeholder="Date" min="2009-01-01"></div>
+                        </div></div>
+                            <div class="adultminor" id="adultminor2">
+                                <p class="companion">Companion</p>
+                                <div class="selekt">
+                                    <button id="btnadult" name="adult">ADULT</button>
+                                    <button id="btnminor" name="minor">MINOR (under 18)</button>
+                                </div>
+                        <div class="fushatf4">
+                            <p class="companion-2">Full name, as in the passport</p>
+                            <div class="usrname">
+                            <img src="img/icons8-name-50 (1).png">
+                            <input type="text" name="username" placeholder="Full name, as in tha passport" required>
+                            </div>
+                            <p class="companion-2">E-mail (optional)</p>
+                            <div class="mail">
+                            <img src="img/icons8-email-50.png">
+                            <input type="email" name="email" placeholder="E-mail (optional)"required>  
+                            </div>
+                            <p class="companion-3">Date of birth</p>
+                           
+                        <div class="calendari">
+                        <img src="img/icons8-calendar-24.png">
+                        <input type="date" name="date" class="date" placeholder="Date" min="2009-01-01"></div>
+                        </div></div></div>
+                        
+                        <input type="button" value="Add more companions" id="addperson">
+                        <a href="index.html" id="nocompanions">I had no companions ></a>
+                    </div>
+				
+					
+						<!-----butoni submit-->
+					<div class="submit-button-2">
+						<a href="forma4.html" class="action-button" id="second-button">
+							<span class="button-text">Submit application</span>
+						</a>
+					</div>
+          </form>
+        </form>			
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.3.5/signature_pad.min.js" integrity="sha512-kw/nRM/BMR2XGArXnOoxKOO5VBHLdITAW00aG8qK4zBzcLVZ4nzg7/oYCaoiwc8U9zrnsO9UHqpyljJ8+iqYiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+const adButon = document.querySelectorAll('button[name="adult"]');
+const minButon = document.querySelectorAll('button[name="minor"]');
+const addperson = document.getElementById("addperson");
+const nocompanions = document.getElementById("nocompanions");
+const adult = document.querySelectorAll('.fushatf4');
+const mail = document.querySelectorAll('.mail');
+const calendar = document.querySelectorAll('.calendari');
+const birthdt = document.querySelectorAll('.companion-3');
+const adultMinor = document.getElementById("adultminor1");
+const adultMinor2 = document.getElementById("adultminor2");
+
+let adultminorCount = 0;
+
+addperson.addEventListener("click", function() {
+  if (adultminorCount === 0) {
+    adultMinor.style.display = 'block';
+  } else if (adultminorCount === 1) {
+    adultMinor2.style.display = 'block';
+  }
+  adultminorCount++;
+});
+
+nocompanions.addEventListener('click', () => {
+  adultMinor.style.display = 'none';
+  adultMinor2.style.display = 'none';
+});
+adButon.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    adult.forEach(el => {
+      el.style.display = 'block';
+    });
+    mail.forEach(el => {
+      el.style.display = 'flex';
+    });
+    calendar.forEach(el => {
+      el.style.display = 'none';
+    });
+    birthdt.forEach(el => {
+      el.style.display = 'none';
+    });
+  });
+});
+
+minButon.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    adult.forEach(el => {
+      el.style.display = 'block';
+    });
+    mail.forEach(el => {
+      el.style.display = 'none';
+    });
+    calendar.forEach(el => {
+      el.style.display = 'flex';
+    });
+    birthdt.forEach(el => {
+      el.style.display = 'block';
+    });
+  });
+});
+
+// Add event listeners to the new buttons
+const newAdultBtns = document.querySelectorAll('.adultminor.fushatf4');
+const newMail = document.querySelectorAll('.adultminor.mail');
+const newCalendar = document.querySelectorAll('.calendari');
+const newBirthdt = document.querySelectorAll('.companion-3');
+
+newAdultBtns.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    adult.forEach(el => {
+      el.style.display = 'block';
+    });
+    newMail.forEach(el => {
+      el.style.display = 'flex';
+    });
+    newCalendar.forEach(el => {
+      el.style.display = 'none';
+    });
+    newBirthdt.forEach(el => {
+      el.style.display = 'none';
+    });
+  });
+});
+
+newMinBtns.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    adult.forEach(el => {
+      el.style.display = 'block';
+    });
+    newMail.forEach(el => {
+      el.style.display = 'none';
+    });
+    newCalendar.forEach(el => {
+      el.style.display = 'flex';
+    });
+    newBirthdt.forEach(el => {
+      el.style.display = 'block';
+    });
+  });
+});
+
+</script>
+
+    </body>
+</html>
