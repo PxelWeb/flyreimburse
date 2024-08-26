@@ -26,6 +26,8 @@ class UserApplicationController extends Controller
 
     public function store(Request $request){
 
+        // apni branch bna lyna ok or jo changes krny huye kr lyna then
+
         $request->validate([
             'username'=>['required'],
             'email'=>['required'],
