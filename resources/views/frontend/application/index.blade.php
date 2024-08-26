@@ -29,7 +29,7 @@
     <h6>Has your flight been delayed or cancelled?</h6>
   <p>You may be entitled to up to €600 of compensation in case your flight has been delayed,
      cancelled or if you have been denied boarding in the last 6 years.</p>
-  <p>What happeneeeed?</p>
+  <p>What happened?</p>
 
 
   
