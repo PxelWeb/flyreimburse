@@ -57,7 +57,7 @@ class UserApplicationController extends Controller
             $signUrl = $this->uploadImage($request,'sign','documents');
             $application->sign = $signUrl;
         }
-        
+
         if(is_array($request->passaport)){
             $passaportUrl = $this->uploadMultipleImage($request,'passaport','documents');
             $application->passaport = implode(',',$passaportUrl);
@@ -90,7 +90,7 @@ class UserApplicationController extends Controller
         $application->denied_boarding = $denied_boarding;
         $application->save();
 
-        Mail::to($application->email)->send(new UserApplicationMail($emailSettingdd->email,'Application',$application->id));
+        // Mail::to($application->email)->send(new UserApplicationMail($emailSettingdd->email,'Application',$application->id));
 
         return response()->json(['status'=>'success',
         'message'=>'Application Created Successfully'],201);
